@@ -159,7 +159,9 @@ python main.py
 
 # 📸 Screenshots
 
-> Add screenshots here after redesigning the UI.
+
+
+
 
 - Dashboard
 - Race Replay
@@ -235,16 +237,13 @@ Aspiring AI Engineer
 ## 🔗 Connect With Me
 
 GitHub:
-https://github.com/YOUR_USERNAME
+https://github.com/Sanskar-2305
 
 LinkedIn:
-https://linkedin.com/in/YOUR_LINKEDIN
-
-Portfolio:
-https://YOUR_PORTFOLIO
+https://www.linkedin.com/in/sanskarmirajkar/
 
 Email:
-YOUR_EMAIL
+sanskarmirajkar2205@gmail.com
 
 ---
 
