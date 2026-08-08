@@ -76,11 +76,20 @@ class InsightsMenu(QMainWindow):
         ))
 
         content_layout.addWidget(self.create_category_section(
-            "Race Analysis",
-            [
-                ("Lap Time & Gap Evolution", "Lap time and gap trends per driver", self.launch_lap_time_chart),
-            ]
-        ))
+    "Race Analysis",
+    [
+        (
+            "Lap Time & Gap Evolution",
+            "Lap time and gap trends per driver",
+            self.launch_lap_time_chart,
+        ),
+        (
+            "Driver Comparison",
+            "Compare lap pace, consistency and tyre performance between two drivers",
+            self.launch_driver_comparison,
+        ),
+    ]
+))
         
         content_layout.addStretch()
         
@@ -213,6 +222,15 @@ class InsightsMenu(QMainWindow):
         from src.insights.lap_time_chart_window import LapTimeChartWindow
         window = LapTimeChartWindow()
         window.show()
+        self.opened_windows.append(window)
+    def launch_driver_comparison(self):
+        print("🚀 Launching: Driver Comparison")
+
+        from src.insights.driver_comparison_window import DriverComparisonWindow
+
+        window = DriverComparisonWindow()
+        window.show()
+
         self.opened_windows.append(window)
 
     def launch_telemetry_viewer(self):
