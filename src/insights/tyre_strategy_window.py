@@ -127,7 +127,7 @@ class StintBar(QWidget):
                 painter.setFont(QFont("Arial", 8, QFont.Bold))
                 label_w = min(bw - 4, 18)
                 painter.drawText(QRect(x1 + 3, 10, label_w, H - 20),
-                                 Qt.AlignVCenter | Qt.AlignLeft, abbr)
+                                    Qt.AlignVCenter | Qt.AlignLeft, abbr)
 
         # Current lap marker
         if self.current_lap and self.current_lap > 1:
