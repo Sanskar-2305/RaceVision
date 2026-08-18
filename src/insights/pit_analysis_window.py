@@ -277,17 +277,13 @@ class PitAnalysisWindow(PitWallWindow):
         self.effectiveness_table.verticalHeader().setVisible(False)
 
         root.addWidget(self.effectiveness_table)
-                # -----------------------------------------------------
+        # -----------------------------------------------------
         # Race-wide strategy comparison
         # -----------------------------------------------------
 
-        strategy_label = QLabel(
-            "Strategy Comparison"
-        )
+        strategy_label = QLabel("Strategy Comparison")
 
-        strategy_label.setFont(
-            QFont("Arial", 14, QFont.Weight.Bold)
-        )
+        strategy_label.setFont(QFont("Arial", 14, QFont.Weight.Bold))
 
         root.addWidget(strategy_label)
 
@@ -642,6 +638,7 @@ class PitAnalysisWindow(PitWallWindow):
 
         return results
         # ---------------------------------------------------------
+
     # Race-wide strategy comparison
     # ---------------------------------------------------------
 
@@ -650,26 +647,14 @@ class PitAnalysisWindow(PitWallWindow):
         comparison = []
 
         for code in sorted(self._lap_times.keys()):
-
-            pit_stops, stints = (
-                self._get_driver_strategy(code)
-            )
+            pit_stops, stints = self._get_driver_strategy(code)
 
             if not stints:
                 continue
 
-            strategy = " → ".join(
-                stint["compound"]
-                for stint in stints
-            )
+            strategy = " → ".join(stint["compound"] for stint in stints)
 
-            average_stint = (
-                sum(
-                    stint["length"]
-                    for stint in stints
-                )
-                / len(stints)
-            )
+            average_stint = sum(stint["length"] for stint in stints) / len(stints)
 
             comparison.append(
                 {
@@ -904,7 +889,7 @@ class PitAnalysisWindow(PitWallWindow):
                 item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
 
                 self.effectiveness_table.setItem(row, column, item)
-                        # -----------------------------------------------------
+                # -----------------------------------------------------
         # Race-wide strategy comparison
         # -----------------------------------------------------
 
@@ -913,7 +898,6 @@ class PitAnalysisWindow(PitWallWindow):
         self.strategy_table.setRowCount(0)
 
         for result in comparison:
-
             row = self.strategy_table.rowCount()
 
             self.strategy_table.insertRow(row)
@@ -922,22 +906,15 @@ class PitAnalysisWindow(PitWallWindow):
                 result["driver"],
                 str(result["stops"]),
                 result["strategy"],
-                f'{result["avg_stint"]:.1f} laps',
+                f"{result['avg_stint']:.1f} laps",
             ]
 
             for column, value in enumerate(values):
-
                 item = QTableWidgetItem(value)
 
-                item.setTextAlignment(
-                    Qt.AlignmentFlag.AlignCenter
-                )
+                item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
 
-                self.strategy_table.setItem(
-                    row,
-                    column,
-                    item
-                )
+                self.strategy_table.setItem(row, column, item)
 
     # ---------------------------------------------------------
     # Summary row selection

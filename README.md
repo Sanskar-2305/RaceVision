@@ -2,9 +2,9 @@
 
 <div align="center">
 
-### AI-Powered Formula 1 Analytics & Race Visualization Platform
+### Formula 1 Analytics & Race Visualization Platform
 
-Transforming Formula 1 telemetry into meaningful insights through interactive race visualization, advanced analytics, and AI-powered race intelligence.
+Transforming Formula 1 telemetry into meaningful insights through interactive race visualization, driver analytics, tyre strategy analysis, and pit-stop intelligence.
 
 ![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)
 ![FastF1](https://img.shields.io/badge/FastF1-Telemetry-red?style=for-the-badge)
@@ -28,45 +28,62 @@ The long-term goal of RaceVision is to evolve into an AI-powered Formula 1 strat
 # ✨ Current Features
 
 ## 🏁 Race Replay
-- Interactive race replay
+- Interactive Formula 1 race replay
 - Real-time driver positions
 - Live leaderboard
 - Race progress visualization
 - Safety Car visualization
+- Adjustable playback speed
 
 ## 📊 Telemetry Analysis
-- Driver telemetry
-- Speed visualization
-- Gear information
-- DRS status
-- Lap tracking
+- FastF1 telemetry integration
+- Driver telemetry visualization
+- Speed and lap-time analysis
+- Gear and DRS information
+- Lap-by-lap telemetry tracking
 
-## 🏎 Driver Analytics
-- Driver selection
-- Lap-by-lap analysis
+## 🏎️ Driver Analytics
+- Individual driver analysis
+- Driver-to-driver comparison
+- Lap performance comparison
 - Position tracking
-- Driver comparison
+- Race performance insights
 
-## 🎮 Interactive Controls
-- Pause / Resume
-- Replay controls
-- Playback speed adjustment
-- Keyboard shortcuts
+## 🛞 Tyre Strategy & Degradation
+- Tyre compound analysis
+- Stint detection and visualization
+- Tyre strategy comparison
+- Tyre degradation modeling
+- Bayesian tyre degradation model
 
+## 🛠️ Pit Stop Analytics
+- Automatic pit-stop detection
+- Tyre change detection
+- Pit-stop confidence classification
+- Pre-stop, out-lap, and post-stop pace analysis
+- Pace recovery analysis
+- Explainable pit-stop effectiveness scoring
+- Race-wide strategy comparison
+
+## 🖥️ Interactive Analytics Dashboard
+- PySide6 analytics windows
+- Interactive driver selection
+- Race strategy summaries
+- Pit-stop performance tables
+- Strategy comparison tables
 ---
 
 # 🚀 Upcoming Features
 
 - 🤖 AI Race Engineer
+- 🧠 AI-generated Race Explanations
 - 📈 Driver Performance Index
 - 📊 Race Momentum Analysis
-- 🛞 Tyre Strategy Dashboard
-- 📉 Pit Stop Analytics
-- 🧠 AI-generated Race Summary
 - 🏆 Championship Analytics
-- 📄 Export Race Reports
-- 🌦 Weather Analysis
-- 📡 Advanced Telemetry Dashboard
+- 📄 Exportable Race Reports
+- 🔮 Predictive Race Strategy
+- 🌦️ Advanced Weather-Race Correlation
+- 🏎️ Multi-Race Comparison
 
 ---
 
@@ -84,39 +101,52 @@ The long-term goal of RaceVision is to evolve into an AI-powered Formula 1 strat
 - Arcade
 - Matplotlib
 
+### Desktop Application
+- PySide6
+- Arcade
+
+### Testing & Development
+- Pytest
+- GitHub Actions
+
 ### AI (Planned)
 - Google Gemini API
-
 ---
+
+
+
 
 # 📂 Project Structure
 
 ```text
 RaceVision/
-
+│
 ├── src/
-│   ├── f1_data.py
-│   ├── arcade_replay.py
-│   ├── ui_components.py
-│   └── interfaces/
+|   ├── cli/
+│   ├── gui/
+│   ├── insights/
+|   ├── interfaces/
+│   ├── bayesian/
+│   └── telemetry/
 │
 ├── resources/
+├── images/
 ├── docs/
 ├── tests/
 │
 ├── main.py
 ├── requirements.txt
+├── requirements-dev.txt
+├── pytest.ini
 └── README.md
-```
 
----
 
 # ⚙️ Installation
 
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/RaceVision.git
+git clone https://github.com/Sanskar-2305/RaceVision.git
 ```
 
 Move into the project
@@ -159,8 +189,53 @@ python main.py
 
 # 📸 Screenshots
 
+## 🏁 Race Replay
 
+Interactive race replay with live driver positions, leaderboard, weather information, lap tracking, and playback controls.
 
+![Race Replay](<images/Screenshot 2026-08-18 220118.png>)
+
+---
+
+## 📡 Driver Telemetry
+
+Live telemetry visualization including speed, gear, throttle, and braking data.
+
+![Driver Telemetry](<images/Screenshot 2026-08-18 220232.png>)
+
+---
+
+## 🏎️ Driver Comparison
+
+Compare lap performance and tyre usage between two drivers.
+
+![Driver Comparison](<images/Screenshot 2026-08-18 220355.png>)
+
+---
+
+## 🛞 Tyre Strategy
+
+Visualize tyre compounds and stint progression across the race.
+
+![Tyre Strategy](<images/Screenshot 2026-08-18 220414.png>)
+
+---
+
+## 🛠️ Pit Stop Analysis
+
+Analyze race strategy, pit stops, tyre stints, pit-stop performance, effectiveness scores, and race-wide strategy comparison.
+
+![Pit Stop Analysis](<images/Screenshot 2026-08-18 220600.png>)
+
+---
+
+## 📈 Lap Time & Gap Evolution
+
+Explore lap-time evolution across drivers and identify the impact of race conditions such as VSC periods and pit stops.
+
+![Lap Time & Gap Evolution](<images/Screenshot 2026-08-18 220653.png>)
+
+## 🏁 Race Replay
 
 
 - Dashboard
@@ -170,23 +245,31 @@ python main.py
 
 ---
 
+
 # 🎯 Roadmap
 
-### Version 1.0
+### ✅ Completed
+
 - Interactive race replay
 - Driver telemetry
-- Safety Car visualization
-
-### Version 2.0
 - Driver comparison
-- Race analytics dashboard
-- Team analytics
+- Tyre strategy analysis
+- Tyre degradation modeling
+- Pit-stop detection
+- Pit-stop performance analysis
+- Pit-stop effectiveness scoring
+- Race-wide strategy comparison
+- Automated testing and CI
 
-### Version 3.0
+### 🔄 Planned
+
 - AI Race Engineer
-- AI race explanations
-- Driver performance scoring
-- Predictive analytics
+- AI-generated race explanations
+- Predictive race strategy
+- Championship analytics
+- Multi-race comparison
+- Exportable race reports
+- Advanced weather correlation
 
 ---
 
