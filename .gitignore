@@ -18,6 +18,9 @@ computed_data/
 output_animation.mp4
 still_frame.png
 
+# Local recordings
+*.mp4
+
 # OS / IDE files
 .DS_Store
 .idea/
